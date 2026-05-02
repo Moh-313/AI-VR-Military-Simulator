@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f646c1f085c1904479e365222c72d9e1
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 359786
+  packageName: Military Supply Modern Collection 01
+  packageVersion: 1.0
+  assetPath: Assets/MilitarySupply01/BuiltIn/Materials/M_MilitarySupply01.mat
+  uploadId: 857466
