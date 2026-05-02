@@ -1,9 +1,33 @@
 fileFormatVersion: 2
-guid: 068acba0ab4adf44ebf948eab9811a76
+guid: 936d21de3be0e744f8193f65128cd7af
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "BaseColor+A_\u0633\u062E\u0645\u06CC\u0647\u062B\u0642_autosave_0_LOW
+        POLY SOLDIER GO SUB __1001_BaseColor+A000"
+    second: {fileID: 2800000, guid: 47d21fb37fe95d441ae0e9bf13dbd2a2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "Metallic_\u0633\u062E\u0645\u06CC\u0647\u062B\u0642_autosave_0_LOW POLY
+        SOLDIER GO SUB __1001_Metallic001"
+    second: {fileID: 2800000, guid: 86fdd139a40f071499cde6bf9d5a73f4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "Normal Open GL_\u0633\u062E\u0645\u06CC\u0647\u062B\u0642_autosave_0_LOW
+        POLY SOLDIER GO SUB __1001_Normal Open GL"
+    second: {fileID: 2800000, guid: 9401a0ae4d47b97408a073eb5dfaaaa1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "Roughness_\u0633\u062E\u0645\u06CC\u0647\u062B\u0642_autosave_0_LOW
+        POLY SOLDIER GO SUB __1001_Roughness002"
+    second: {fileID: 2800000, guid: 558c483d7eddf9e42a5f7b4aa87b797c, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
