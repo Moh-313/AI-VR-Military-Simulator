@@ -4,45 +4,88 @@ using UnityEngine.UI;
 
 public class MapCardHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public Image cardImage;
+    [Header("Images")]
+    public Image cardBackground;
     public Image mapImage;
+    public Image glowBorder;
 
-    public Color normalColor = new Color32(64, 54, 38, 255);
-    public Color hoverColor = new Color32(120, 96, 55, 255);
+    [Header("Normal State")]
+    public Color normalImageColor = new Color(1f, 1f, 1f, 0.78f);
+    public Color normalCardColor = new Color(0f, 0f, 0f, 0.35f);
 
+    [Header("Hover State")]
+    public Color hoverImageColor = new Color(1f, 1f, 1f, 1f);
+    public Color hoverCardColor = new Color(0.45f, 0.32f, 0.12f, 0.65f);
+
+    [Header("Animation")]
     public float normalScale = 1f;
-    public float hoverScale = 1.06f;
+    public float hoverScale = 1.08f;
     public float speed = 10f;
 
     private Vector3 targetScale;
-    private Color targetColor;
+    private Color targetImageColor;
+    private Color targetCardColor;
 
-    void Start()
+    private void Start()
     {
         targetScale = Vector3.one * normalScale;
-        targetColor = normalColor;
+        targetImageColor = normalImageColor;
+        targetCardColor = normalCardColor;
 
-        if (cardImage != null)
-            cardImage.color = normalColor;
+        if (mapImage != null)
+            mapImage.color = normalImageColor;
+
+        if (cardBackground != null)
+            cardBackground.color = normalCardColor;
+
+        if (glowBorder != null)
+            glowBorder.enabled = false;
     }
 
-    void Update()
+    private void Update()
     {
-        transform.localScale = Vector3.Lerp(transform.localScale, targetScale, Time.deltaTime * speed);
+        transform.localScale = Vector3.Lerp(
+            transform.localScale,
+            targetScale,
+            Time.deltaTime * speed
+        );
 
-        if (cardImage != null)
-            cardImage.color = Color.Lerp(cardImage.color, targetColor, Time.deltaTime * speed);
+        if (mapImage != null)
+        {
+            mapImage.color = Color.Lerp(
+                mapImage.color,
+                targetImageColor,
+                Time.deltaTime * speed
+            );
+        }
+
+        if (cardBackground != null)
+        {
+            cardBackground.color = Color.Lerp(
+                cardBackground.color,
+                targetCardColor,
+                Time.deltaTime * speed
+            );
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         targetScale = Vector3.one * hoverScale;
-        targetColor = hoverColor;
+        targetImageColor = hoverImageColor;
+        targetCardColor = hoverCardColor;
+
+        if (glowBorder != null)
+            glowBorder.enabled = true;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         targetScale = Vector3.one * normalScale;
-        targetColor = normalColor;
+        targetImageColor = normalImageColor;
+        targetCardColor = normalCardColor;
+
+        if (glowBorder != null)
+            glowBorder.enabled = false;
     }
 }
