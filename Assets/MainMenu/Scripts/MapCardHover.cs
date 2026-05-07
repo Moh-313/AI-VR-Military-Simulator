@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement; // NEW
 
-public class MapCardHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+public class MapCardHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [Header("Images")]
     public Image cardBackground;
@@ -22,9 +21,6 @@ public class MapCardHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     public float normalScale = 1f;
     public float hoverScale = 1.08f;
     public float speed = 10f;
-
-    [Header("Scene")]
-    public string desertSceneName = "DesertScene"; // SET THIS in inspector
 
     private Vector3 targetScale;
     private Color targetImageColor;
@@ -91,11 +87,5 @@ public class MapCardHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
         if (glowBorder != null)
             glowBorder.enabled = false;
-    }
-
-    // 👇 NEW: Click = Load Scene
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        SceneManager.LoadScene(desertSceneName);
     }
 }
